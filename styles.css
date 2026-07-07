@@ -487,3 +487,61 @@ footer {
 .project-card-link:hover .link-icon {
     color: var(--accent);
 }
+/* Certificate Image Layout */
+.cert-img-link {
+    display: inline-block;
+    margin: 0.6rem 0;
+    text-decoration: none;
+    width: 100%;
+    max-width: 340px;
+}
+
+.cert-image-container {
+    position: relative;
+    border-radius: 4px;
+    overflow: hidden;
+    border: 1px solid var(--border-color);
+    background-color: #050505;
+    height: 190px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: border-color 0.3s ease, transform 0.2s ease;
+}
+
+.cert-preview-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Crops image cleanly into the preview box */
+    transition: opacity 0.3s ease;
+}
+
+/* Hover Dark Overlay with text */
+.cert-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.75);
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 3;
+}
+
+/* Hover effects */
+.cert-image-container:hover {
+    border-color: var(--text-main);
+    transform: translateY(-2px);
+}
+
+.cert-image-container:hover .cert-overlay {
+    opacity: 1;
+}
